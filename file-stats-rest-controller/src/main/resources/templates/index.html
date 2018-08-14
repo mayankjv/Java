@@ -1,0 +1,23 @@
+<! DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>File Statistics</title>
+	</head>
+	<body>
+		<script>
+			var httpreq= XMLHttpRequest();
+			httpreq.open('GET','http://http://localhost:8080/TestClass/all?path=')
+			httpreq,onreadystatechange = function(){
+				var temp= httpreq.response;
+				
+				var json= JSON.parse(temp);
+				for(var content in json){
+					document.write(contents[content].name);
+					document.write("<br>");
+				}
+				
+			};
+			httpreq.send();
+		</script>
+	</body>
+</html>
